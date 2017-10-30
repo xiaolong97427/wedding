@@ -7,8 +7,8 @@
       </div>
       <div class="header_menu">
         <ul>
-          <li>HOME</li>
-          <li>PRE WEDDING TH</li>
+          <li><a href="#/">HOME</a></li>
+          <li><a href="#/gallery">PRE WEDDING TH</a></li>
           <li>PRE WEDDING FR</li>
         </ul>
       </div>
@@ -57,4 +57,5 @@ export default {
     font-family: PT Sans;
     border:1px solid black
   }
+
 </style>
