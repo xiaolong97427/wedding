@@ -5,10 +5,13 @@
             <div>Promo text #1</div>
         </li>
       <li ><img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-10.jpg" class="slides_img" alt>
-            <div>Promo text #1</div>
+            <div>Promo text #2</div>
         </li>
         <li ><img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-11.jpg" class="slides_img" alt>
-            <div>Promo text #2</div>
+            <div>Promo text #3</div>
+        </li>
+        <li ><img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-1.jpg" class="slides_img" alt>
+            <div>Promo text #4</div>
         </li>
     </ul>
   </div>
@@ -28,14 +31,10 @@ export default {
 <style>
   .slides {
    /*margin:50px auto;
-
-
-
     position:relative;*/
     width: 100%;
     height: auto;
     overflow:hidden;  /* Cache ce qui depasse de la DIV */
-    border: 1px solid black;
     flex-grow:1; /* tout l’espace disponible doit être occupé => pousse le footer en bas de page */
     min-height:100vh; /* 1 */
     display:flex; /* 2 */
@@ -48,13 +47,12 @@ export default {
   .slides ul {
     list-style:none;
     position:relative;
-    border: 1px solid blue;
+    margin: 0px;
   }
 
   .slides li {
     opacity:0;
     position:absolute; /*éléments en absolu se placent par rapport à leur plus proche parent positionné ( "positionné" signifie que la valeur de la propriété CSS "position" est différente de "static" (la valeur par défaut).) */
-    border: 1px solid red;
     top:0;
     left:0;
     height:100vh;
@@ -114,6 +112,10 @@ export default {
     }
   }
 
+  .slides ul  li:nth-child(1), .slides ul  li:nth-child(1) div {
+      -webkit-animation-delay: 1.0s;
+      -moz-animation-delay: 1.0s;
+  }
   .slides ul  li:nth-child(2), .slides ul  li:nth-child(2) div {
       -webkit-animation-delay: 6.0s;
       -moz-animation-delay: 6.0s;

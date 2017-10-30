@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <div class="header_wrapper">
-      <div class="header_log_section">
         <img src="http://gt3demo.com/wp/oyster/wp-content/themes/gt3-wp-oyster/img/logo.png" alt="" width="80" height="25" class="logo_def">
-        The wedding dd/MM/YYYY
-      </div>
+        <p class="header_slogan">
+          The wedding dd/MM/YYYY
+        </p>
+
       <div class="header_menu">
         <ul>
           <li><a href="#/">HOME</a></li>
@@ -34,11 +35,20 @@ export default {
     margin-top: 60px;*/
   }
 
+  .header_slogan {
+    font-family: PT Sans;
+    font-weight: 400p;
+    font-size: 12px;
+    color: #434343;
+    align-self: center;
+  }
   .header_menu {
-    display: table-cell;
-    vertical-align:middle;
-    float:right;
-    border:1px solid orange
+    align-self: flex-end;
+    flex:1;
+    float: right;
+  }
+  .header_menu ul {
+    float: right;
   }
   .header_menu ul li {
     list-style: none;
@@ -50,12 +60,10 @@ export default {
   .header_log_section {
     float: left;
     vertical-align: middle;
-    border:1px solid blue
   }
   .header_wrapper {
-    font-weight: 400px;
-    font-family: PT Sans;
-    border:1px solid black
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
   }
-
 </style>
