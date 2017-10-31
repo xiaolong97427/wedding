@@ -1,11 +1,12 @@
 <template>
+
   <div class="body">
     <section id="photos">
-      <img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-1.jpg" alt="Cute cat">
-      <img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-2.jpg" alt="Serious cat">
-      <img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-3.jpg" alt="Cute cat">
-      <img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-4.jpg" alt="Serious cat">
-      <img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-5.jpg" alt="Cute cat">
+      <img v-img:my-group src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-1.jpg" alt="test cat">
+      <img v-img:my-group src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-2.jpg" alt="Serious cat">
+      <img v-img:my-group src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-3.jpg" alt="Cute cat">
+      <img v-img:my-group src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-4.jpg" alt="Serious cat">
+      <img v-img:my-group src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-5.jpg" alt="Cute cat">
       <img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-6.jpg" alt="Serious cat">
       <img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-7.jpg" alt="Cute cat">
       <img src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-8.jpg" alt="Serious cat">
@@ -24,17 +25,23 @@
     </section>
   </div>
 </template>
-
+<!--
+<script src="https://cdn.jsdelivr.net/npm/v-img@0.1.0/dist/v-img.min.js"></script>
+-->
 <script>
+  // import VueImg from '../../node_modules/v-img/dist/v-img'
+
   export default {
     name: 'Gallery',
+    // components: {VueImg},
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
     }
-}
+  }
 </script>
+
 
 <style>
   .body {
