@@ -8,7 +8,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/gallery',
+      path: '/gallery/:galleryName',
       name: 'Gallery',
       component: Gallery
     },

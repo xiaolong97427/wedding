@@ -1,6 +1,7 @@
 <template>
 
   <div class="body">
+    {{ $route.params.galleryName }}
     <section id="photos">
       <img v-img:my-group src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-1.jpg" alt="test cat">
       <img v-img:my-group src="http://gt3demo.com/wp/oyster/wp-content/uploads/2014/03/nature-2.jpg" alt="Serious cat">
