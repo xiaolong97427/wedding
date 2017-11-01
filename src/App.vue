@@ -51,11 +51,17 @@ export default {
     float: right;
   }
   .header_menu ul li {
-    list-style: none;
     display: inline-block;
     margin-left:30px;
     font-size: 13px;
-    font-family: PT Sans;
+    /*font-family: PT Sans;*/
+    font-family: Arial;
+  }
+  .header_menu a {
+    text-decoration: none;
+  }
+  .header_menu  a:link, a:visited {
+    color: black;
   }
   .header_log_section {
     float: left;
