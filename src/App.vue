@@ -9,22 +9,56 @@
       <div class="header_menu">
         <ul>
           <li><a href="#/">HOME</a></li>
-          <li><a href="#/gallery/preweddingth">PRE WED TH</a></li>
+          <li><a href="#" @click="openGallery('preweddingth')" :class="{xx: menu === 'preweddingth'}">PRE WED TH</a></li>
           <li><a href="#/gallery/preweddingfr">PRE WED FR</a></li>
           <li><a href="#/gallery/engagement">ENGAGEMENT</a></li>
           <li><a href="#/gallery/wedding">WEDDING</a></li>
         </ul>
       </div>
     </div>
+{{value}}
+    <SnjModal v-if="showModal" v-model="value" @close="showModal = false">
+        <!--
+          you can use custom content here to overwrite
+          default content
+          <h3 slot="header">custom header</h3>
+        -->
+
+    </SnjModal>
 
     <router-view/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import SnjModal from '@/components/SnjModal'
+
+  export default {
+    name: 'app',
+    components: {SnjModal},
+    data () {
+      return {
+        menu: 'home',
+        showModal: false,
+        value: ''
+      }
+    },
+    methods: {
+      openGallery (pGalleryName) {
+        // try to get access
+        // Access granted => Go to the correct gallery
+        // Access not authorized => enter Password
+        this.showModal = true
+        this.menu = pGalleryName
+      }
+    },
+    watch: {
+      'value': function () {
+        console.log(this.menu)
+        this.$router.push({name: 'Gallery', params: { galleryName: this.menu }})
+      }
+    }
+  }
 </script>
 
 <style>
@@ -38,37 +72,37 @@ export default {
   }
 
   /* cyrillic-ext */
-@font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v9/JX7MlXqjSJNjQvI4heMMGvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v9/vtwNVMP8y9C17vLvIBNZI_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v9/9kaD4V2pNPMMeUVBHayd7vY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v9/ATKpv8nLYAKUYexo8iqqrg.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
+  @font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v9/JX7MlXqjSJNjQvI4heMMGvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v9/vtwNVMP8y9C17vLvIBNZI_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v9/9kaD4V2pNPMMeUVBHayd7vY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v9/ATKpv8nLYAKUYexo8iqqrg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
 
   .header_slogan {
     font-family: 'PT Sans';
@@ -88,9 +122,7 @@ export default {
   .header_menu ul li {
     display: inline-block;
     margin-left:30px;
-;
   }
-
   .header_menu  a:link, a:visited {
     text-decoration: none;
     color: #343434;

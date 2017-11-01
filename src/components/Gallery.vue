@@ -1,5 +1,4 @@
 <template>
-
   <div class="body">
     {{ $route.params.galleryName }}
     <section id="photos">
